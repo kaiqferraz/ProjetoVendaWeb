@@ -1,0 +1,24 @@
+.container {
+  height: 85%;
+}
+
+i {
+  padding-right: 0.6rem;
+}
+
+mat-sidenav {
+  background-color: burlywood;
+  border: 5px;
+  border-color: black;
+  border-style: double;
+}
+
+mat-nav-list a {
+  color: black;
+  font-weight: 500;
+}
+
+mat-nav-list a:hover {
+  color: crimson;
+  font-weight: 500;
+}

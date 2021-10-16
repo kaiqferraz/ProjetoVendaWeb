@@ -1,0 +1,36 @@
+<form>
+  <h1>Deseja realmente deletar esse produto?</h1>
+
+  <mat-form-field class="form">
+    <mat-label>Nome </mat-label>
+    <input matInput [(ngModel)]="produto.nomeProduto" type="text" name="nomeProduto" disabled>
+  </mat-form-field>
+
+  <mat-form-field class="form">
+    <mat-label>Preço </mat-label>
+    <input matInput [(ngModel)]="produto.precoProduto" type="text" name="precoProduto" disabled>
+  </mat-form-field>
+
+  <mat-form-field class="form">
+    <mat-label>Quantidade </mat-label>
+    <input matInput [(ngModel)]="produto.quantidadeProduto" type="text" name="quantidadeProduto" disabled>
+  </mat-form-field>
+
+  <mat-form-field class="form">
+    <mat-label>Temperatura </mat-label>
+    <input matInput [(ngModel)]="produto.temperaturaProduto" type="text" name="temperaturaProduto" disabled>
+  </mat-form-field>
+
+
+
+
+
+
+  <div class="buttons">
+    <button (click)="delete()" class="mat-elevation-z8" mat-stroked-button color="primary">Deletar</button>
+
+    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn">Cancelar</button>
+  </div>
+
+
+</form>

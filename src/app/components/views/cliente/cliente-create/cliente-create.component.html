@@ -1,0 +1,54 @@
+<form>
+  <h1>Preencha os campos para criar um novo cliente!</h1>
+
+  <mat-form-field class="form">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="cliente.nome" type="text" name="nome" placeholder="ex. Kaique">
+  </mat-form-field>
+
+  <mat-form-field class="form">
+    <mat-label>Sexo</mat-label>
+    <input matInput [(ngModel)]="cliente.sexo" type="text" name="sexo" placeholder="ex. m">
+  </mat-form-field>
+
+  <mat-form-field class="form">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="cliente.email" type="text" name="email" placeholder="ex. kaique@gmail.com">
+  </mat-form-field>
+
+  <mat-form-field class="form">
+    <mat-label>Estado Civil</mat-label>
+    <input matInput [(ngModel)]="cliente.estadoCivil" type="text" name="estadoCivil" placeholder="ex. solteiro">
+  </mat-form-field>
+
+  <mat-form-field class="form">
+    <mat-label>CPF</mat-label>
+    <input matInput [(ngModel)]="cliente.cpf" type="text" name="cpf" placeholder="ex. 123.456.789-50">
+  </mat-form-field>
+
+  <mat-form-field class="form">
+    <mat-label>dataNascimento</mat-label>
+    <input matInput [(ngModel)]="cliente.dataNascimento" type="text" name="dataNascimento" placeholder="ex. 19971820">
+  </mat-form-field>
+
+
+
+  <mat-form-field class="form">
+    <mat-label>Endereço</mat-label>
+    <input matInput [(ngModel)]="cliente.endereco" type="text" name="endereco" placeholder="ex. rua joao 256">
+  </mat-form-field>
+
+
+
+
+
+
+
+  <div class="buttons">
+    <button (click)="create()" class="mat-elevation-z8" mat-stroked-button color="primary">Criar</button>
+
+    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn">Cancelar</button>
+  </div>
+
+
+</form>
