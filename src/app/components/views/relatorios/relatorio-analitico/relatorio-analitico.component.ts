@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CarrinhoItem } from './carrinhoItem.model';
+import { PedidoItem } from './pedidoItem.model';
+
 import { RelatorioAnaliticoService } from './relatorio-analitico.service';
-
-
+import { RelatorioAnalitico } from './relatorioAnalitico.model';
 
 @Component({
   selector: 'app-relatorio-analitico',
@@ -12,9 +12,14 @@ import { RelatorioAnaliticoService } from './relatorio-analitico.service';
 })
 export class RelatorioAnaliticoComponent implements OnInit {
 
-  relatorio = {id:'', cliente: '', produto: '', quantidade: ''}
+  itens: PedidoItem[] = []
 
-  itens: CarrinhoItem[] = []
+  relatorio: RelatorioAnalitico = {
+    id: '',
+    itens: [],
+  }
+
+  displayedColumns: string[] = ['id', 'quantidade', 'preco', 'subTotal'];
 
   constructor(private service: RelatorioAnaliticoService, 
     private route: ActivatedRoute, private router: Router) {}
@@ -26,11 +31,10 @@ export class RelatorioAnaliticoComponent implements OnInit {
 
     findById(): void {
       this.service.findById(this.relatorio.id!).subscribe((resposta => {
-     
-       console.log(resposta)
+        this.relatorio.itens = resposta.itens
+      console.log(resposta.itens)
+      console.log(resposta)
       }))
     }
-   
-
-
   }
+

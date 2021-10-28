@@ -1,6 +1,7 @@
+import { PedidoItem } from "./pedidoItem.model";
+
 export interface RelatorioAnalitico{
   id?: String;
-  quantidade: String;
-  cliente: String;
-  produto: String;
+  itens: PedidoItem[];
+
   }

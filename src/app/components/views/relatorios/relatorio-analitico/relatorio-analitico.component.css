@@ -1,26 +1,40 @@
-form {
-  text-align: center;
-  width: 70%;
-  margin: 2rem auto 0 auto;
+.content {
+  width: 90%;
+  margin: 1.4rem auto auto auto;
 }
 
-h1 {
-  font-size: 20px;
-  font-weight: 800;
+.title {
+  text-align: center;
   margin-bottom: 3rem;
 }
 
-.form {
-  width: 100%;
-}
-
-.buttons {
-  width: 100%;
-  text-align: start;
+.title h1 {
+  font-size: 1.5rem;
+  color: rgb(192, 187, 187);
+  font-weight: 500;
 }
 
 button {
-  margin-right: 0.5rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.table {
+  width: 100%;
+}
+
+.edit {
+  color: rgb(206, 173, 24);
+}
+
+.delete {
+  color: rgb(258, 56, 56);
+  margin-left: 0.5rem;
+}
+
+.mat-header {
+  width: 5rem;
+}
+
+.pesquisar {
+  text-align: center;
 }
