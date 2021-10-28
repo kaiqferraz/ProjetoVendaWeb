@@ -4,39 +4,25 @@
   <mat-form-field class="form">
 
     <mat-label>Cliente </mat-label>
-    <input matInput type="text" name="nomeProduto" placeholder="ex. Kaique Ferraz">
+    <input matInput [(ngModel)]="venda.cliente" type="text" name="cliente" placeholder="ex. Kaique Ferraz">
   </mat-form-field>
-
-  <div class="buttons">
-    <button class="mat-elevation-z8" mat-stroked-button color="primary">Inserir Cliente</button>
-
-    <button class="mat-elevation-z8" mat-stroked-button color="warn">Limpar</button>
-  </div>
-
 
   <h1>Selecione um ou mais produtos da nossa base de dados!</h1>
 
   <mat-form-field class="form">
     <mat-label>Produto </mat-label>
-    <input matInput type="text" name="nomeProduto" placeholder="ex. Skol">
+    <input matInput [(ngModel)]="venda.produto" type="text" name="produto" placeholder="ex. Skol">
   </mat-form-field>
 
   <mat-form-field class="form">
     <mat-label>QTD </mat-label>
-    <input matInput type="text" name="nomeProduto" placeholder="ex. 10">
+    <input matInput [(ngModel)]="venda.quantidade" type="text" name="quantidade" placeholder="ex. 10">
   </mat-form-field>
 
-  <div class="buttons">
-    <button class="mat-elevation-z8" mat-stroked-button color="primary">Inserir Produto</button>
-
-    <button class="mat-elevation-z8" mat-stroked-button color="warn">Limpar</button>
-  </div>
-
-
   <div class="buttons-finalizar">
-    <button class="mat-elevation-z8" mat-stroked-button color="primary">Realizar Venda</button>
+    <button (click)="inserir()" class="mat-elevation-z8" mat-stroked-button color="primary">Realizar Venda</button>
 
-    <button class="mat-elevation-z8" mat-stroked-button color="warn">Cancelar Venda</button>
+    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn">Cancelar Venda</button>
   </div>
 
 

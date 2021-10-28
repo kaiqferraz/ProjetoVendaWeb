@@ -1,0 +1,54 @@
+<div class="content">
+
+  <div class="title">
+    <h1>Resumo geral das vendas por
+      periodo </h1>
+  </div>
+
+
+  <div class="mat-elevation-z8 content-table">
+
+
+
+    <table class="table" mat-table [dataSource]="relatorioSintetico">
+
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let row">{{row.id}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="cliente">
+        <th mat-header-cell *matHeaderCellDef> cliente </th>
+        <td mat-cell *matCellDef="let row">{{row.cliente.nome}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataVenda">
+        <th mat-header-cell *matHeaderCellDef> dataVenda </th>
+        <td mat-cell *matCellDef="let row">{{row.dataVenda}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="valorTotal">
+        <th mat-header-cell *matHeaderCellDef> valorTotal </th>
+        <td mat-cell *matCellDef="let row">{{row.valorTotal}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes">
+        <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>
+        <td mat-cell *matCellDef="let row">
+
+          <a class="edit" routerLink="relatorioAnalitico/{{ row.id }}">
+            <i class="material-icons">edit</i>
+          </a>
+
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+</div>

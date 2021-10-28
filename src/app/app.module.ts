@@ -36,7 +36,10 @@ import { ProdutoCreateComponent } from './components/views/produto/produto-creat
 import { ProdutoUpdateComponent } from './components/views/produto/produto-update/produto-update.component';
 import { ProdutoDeleteComponent } from './components/views/produto/produto-delete/produto-delete.component';
 import { VendaCreateComponent } from './components/views/venda/venda-create/venda-create.component';
-import { VendaReadComponent } from './components/views/venda/venda-read/venda-read.component';
+import { RelatorioAnaliticoComponent } from './components/views/relatorios/relatorio-analitico/relatorio-analitico.component';
+import { CartService } from './components/views/venda/cart.service';
+import { RelatorioSinteticoComponent } from './components/views/relatorios/relatorio-sintetico/relatorio-sintetico.component';
+
 
 
 
@@ -59,7 +62,10 @@ import { VendaReadComponent } from './components/views/venda/venda-read/venda-re
     ProdutoUpdateComponent,
     ProdutoDeleteComponent,
     VendaCreateComponent,
-    VendaReadComponent
+    RelatorioAnaliticoComponent,
+    RelatorioSinteticoComponent,
+ 
+ 
   ],
   imports: [
     BrowserModule,
@@ -80,7 +86,9 @@ import { VendaReadComponent } from './components/views/venda/venda-read/venda-re
     ReactiveFormsModule,
  
   ],
-  providers: [],
+  providers: [
+    CartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

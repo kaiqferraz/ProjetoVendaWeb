@@ -10,6 +10,8 @@ import { ProdutoCreateComponent } from './components/views/produto/produto-creat
 import { ProdutoUpdateComponent } from './components/views/produto/produto-update/produto-update.component';
 import { ProdutoDeleteComponent } from './components/views/produto/produto-delete/produto-delete.component';
 import { VendaCreateComponent } from './components/views/venda/venda-create/venda-create.component';
+import { RelatorioAnaliticoComponent } from './components/views/relatorios/relatorio-analitico/relatorio-analitico.component';
+import { RelatorioSinteticoComponent } from './components/views/relatorios/relatorio-sintetico/relatorio-sintetico.component';
 
 const routes: Routes = [
 
@@ -69,6 +71,26 @@ const routes: Routes = [
     component: VendaCreateComponent
 
   },
+  
+  {
+    path: 'relatorioAnalitico',
+    component: RelatorioAnaliticoComponent
+
+  },
+
+  {
+    path: 'relatorioSintetico',
+    component: RelatorioSinteticoComponent
+
+  },
+
+  {
+    path: 'relatorioSintetico/relatorioAnalitico/:id',
+    component: RelatorioAnaliticoComponent
+
+  },
+  
+  
 
   
 
