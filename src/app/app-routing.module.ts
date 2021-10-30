@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/views/home/home.component';
+import { HomeComponent } from '../../home/home.component';
 import { ClienteReadComponent } from './components/views/cliente/cliente-read/cliente-read.component';
 import { ClienteCreateComponent } from './components/views/cliente/cliente-create/cliente-create.component';
 import { ClienteUpdateComponent } from './components/views/cliente/cliente-update/cliente-update.component';

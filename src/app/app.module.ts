@@ -27,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { ClienteReadComponent } from './components/views/cliente/cliente-read/cliente-read.component';
-import { HomeComponent } from './components/views/home/home.component';
+import { HomeComponent } from '../../home/home.component';
 import { ClienteCreateComponent } from './components/views/cliente/cliente-create/cliente-create.component';
 import { ClienteUpdateComponent } from './components/views/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './components/views/cliente/cliente-delete/cliente-delete.component';
@@ -37,7 +37,6 @@ import { ProdutoUpdateComponent } from './components/views/produto/produto-updat
 import { ProdutoDeleteComponent } from './components/views/produto/produto-delete/produto-delete.component';
 import { VendaCreateComponent } from './components/views/venda/venda-create/venda-create.component';
 import { RelatorioAnaliticoComponent } from './components/views/relatorios/relatorio-analitico/relatorio-analitico.component';
-import { CartService } from './components/views/venda/cart.service';
 import { RelatorioSinteticoComponent } from './components/views/relatorios/relatorio-sintetico/relatorio-sintetico.component';
 
 
@@ -87,7 +86,7 @@ import { RelatorioSinteticoComponent } from './components/views/relatorios/relat
  
   ],
   providers: [
-    CartService
+  
   ],
   bootstrap: [AppComponent]
 })

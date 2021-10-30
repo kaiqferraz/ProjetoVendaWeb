@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Cliente } from '../../cliente/cliente.model';
+import { ClienteVenda } from '../clienteVenda.model';
+import { PedidoItemVenda } from '../pedidoItemVenda.modal';
 import { Venda } from '../venda.model';
 import { VendaService } from '../venda.service';
 
@@ -10,22 +13,49 @@ import { VendaService } from '../venda.service';
 })
 export class VendaCreateComponent implements OnInit {
 
-  venda = {cliente: '', produto: '', quantidade: ''}
+  cliente: ClienteVenda = {
+    nome: '',
+}
 
-  itens: Venda[] = []
-
+  venda: Venda = {
+    id: '',
+    itens: [],
+    cliente: []
+  }
+  itens: PedidoItemVenda[] = []
 
   
-  constructor(private service: VendaService, private router: Router) {}
+  constructor(private service: VendaService, private router: Router, private route: ActivatedRoute) {}
   
   ngOnInit(): void {
+    this.cliente.id = this.route.snapshot.paramMap.get('id')!
+    this.findById();
+  }
+
+  findById(): void {
+    this.service.findById(this.cliente.id!).subscribe((resposta => {
+      this.cliente.nome = resposta.nome
+      console.log(resposta)
+      
+    }))
+  }
+
+ 
+  create(): void {
+    this.service.create(this.venda)
+      .subscribe((resposta) => {
+        console.log(resposta)
+        this.router.navigate([''])
+        this.service.mensagem('Venda realiza com sucesso')
+      }, err => {
+        for (let i = 0; i < err.error.errors.length; i++) {
+          this.service.mensagem(err.error.errors[i].message)
+        }
+      })
   }
 
 
-  inserir(): void {
-   console.log("cliente: " + this.venda.cliente + " produto: " + this.venda.produto + " quantidade: " + this.venda.quantidade)
-  }
-  
+
   cancel(): void {
     this.router.navigate([''])
   }
