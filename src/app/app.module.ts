@@ -40,6 +40,13 @@ import { RelatorioAnaliticoComponent } from './components/views/relatorios/relat
 import { RelatorioSinteticoComponent } from './components/views/relatorios/relatorio-sintetico/relatorio-sintetico.component';
 
 
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { StorageService } from 'src/environments/storage.service';
+import { ClienteService } from './components/views/cliente/cliente.service';
+import { ProdutoService } from './components/views/produto/produto.service';
+import { CartService } from './components/views/venda/cart.service';
+
 
 
 
@@ -83,9 +90,14 @@ import { RelatorioSinteticoComponent } from './components/views/relatorios/relat
     MatFormFieldModule,
     MatSnackBarModule,
     ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
  
   ],
   providers: [
+    StorageService,
+    ClienteService,
+    ProdutoService,
+    CartService,
   
   ],
   bootstrap: [AppComponent]

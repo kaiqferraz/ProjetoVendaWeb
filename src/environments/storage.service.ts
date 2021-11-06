@@ -1,5 +1,9 @@
 import { Injectable } from "@angular/core";
-import { Cart } from "src/app/components/views/venda/cart.model";
+import { Produto } from "src/app/components/views/produto/produto.model";
+import { ProdutoService } from "src/app/components/views/produto/produto.service";
+import { Cart } from "src/app/components/views/venda/cart";
+import { CartItem } from "src/app/components/views/venda/cartItem";
+import { ItemPedidoDTO } from "src/app/components/views/venda/item-pedido";
 import { STORAGE_KEY } from "./storage_keys.config";
 
 
@@ -7,18 +11,18 @@ import { STORAGE_KEY } from "./storage_keys.config";
 export class StorageService{
 
 
-   
-    getCart() : Cart {
-        let str = localStorage.getItem(STORAGE_KEY.cart);
-        if (str != null) {
-            return JSON.parse(str);
-        }
-        else {
-            return null;
-        }
+
+   getCart() : Cart {
+    let cart: Cart = {itens: []};
+    let str;
+    if( str = localStorage.getItem(STORAGE_KEY.cart)){
+        return JSON.parse(str)
+    } else{
+       return cart;
     }
-    
- 
+}
+
+
 
     setCart(obj : Cart) {
         if(obj != null) {
@@ -28,4 +32,7 @@ export class StorageService{
         }
     }
 
+
+    
 }
+

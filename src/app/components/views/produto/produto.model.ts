@@ -1,7 +1,9 @@
 export interface Produto {
-  id?: String;
-  nomeProduto: String;
-  precoProduto: String;
-  quantidadeProduto: String;
-  temperaturaProduto: String;
+  id: string;
+  nomeProduto: string;
+  precoProduto: string;
+  quantidadeProduto: string;
+  temperaturaProduto: string;
   }
+
+ 

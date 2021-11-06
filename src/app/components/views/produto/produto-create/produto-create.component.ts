@@ -12,6 +12,7 @@ export class ProdutoCreateComponent implements OnInit {
 
   
 produto: Produto = {
+  id: '',
   nomeProduto: '',
   precoProduto: '',
   quantidadeProduto: '',

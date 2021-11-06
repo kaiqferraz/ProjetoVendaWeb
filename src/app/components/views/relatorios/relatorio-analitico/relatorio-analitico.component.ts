@@ -22,7 +22,7 @@ export class RelatorioAnaliticoComponent implements OnInit {
   relatorio: RelatorioAnalitico = {
     id: '',
     itens: [],
-  
+
   }
 
   displayedColumns: string[] = ['id','produto', 'quantidade', 'preco', 'subTotal'];

@@ -1,29 +1,36 @@
+<H1>Preencha os campos para realizar uma venda</H1>
+
 <form>
-  <h1>Selecione um cliente da nossa base de dados!</h1>
 
-  <mat-form-field class="form">
+  <div>
+    <H1>Selecione um cliente</H1>
+    <label for="selectCliente">Cliente:</label>
+    <select>
+      <option *ngFor="let c of clientes" value="{{c.id}}">{{c.nome}}</option>
+    </select>
+  </div>
 
-    <mat-label>Cliente </mat-label>
-    <input matInput type="text" name="cliente" placeholder="ex. Kaique Ferraz">
-  </mat-form-field>
+  <div>
+    <H1>Selecione um ou mais produtos</H1>
 
-  <h1>Selecione um ou mais produtos da nossa base de dados!</h1>
-
-  <mat-form-field class="form">
-    <mat-label>Produto </mat-label>
-    <input matInput type="text" name="produto" placeholder="ex. Skol">
-  </mat-form-field>
-
-  <mat-form-field class="form">
-    <mat-label>QTD </mat-label>
-    <input matInput type="text" name="quantidade" placeholder="ex. 10">
-  </mat-form-field>
-
-  <div class="buttons-finalizar">
-    <button (click)="create()" class="mat-elevation-z8" mat-stroked-button color="primary">Realizar Venda</button>
-
-    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn">Cancelar Venda</button>
+    <ul *ngFor="let p of produtos">
+      <li>{{p.nomeProduto}}</li>
+      <button (click)="addToCart(item)">+</button>
+    </ul>
   </div>
 
 
+  <button ion-button block (click)="checkout()">Confirmar Pedido</button>
+
 </form>
+
+
+<div class="lista">
+  <H1> Lista de itens</H1>
+  <ul *ngFor="let item of itens">
+    <li>{{item.produto.nomeProduto}}</li>
+    <li>{{item.produto.precoProduto}}</li>
+  </ul>
+
+
+</div>

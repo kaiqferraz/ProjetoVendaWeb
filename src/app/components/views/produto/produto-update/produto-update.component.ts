@@ -11,6 +11,7 @@ import { ProdutoService } from '../produto.service';
 export class ProdutoUpdateComponent implements OnInit {
 
   produto: Produto = {
+    id: '',
     nomeProduto: '',
     precoProduto: '',
     quantidadeProduto: '',

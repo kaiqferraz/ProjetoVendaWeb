@@ -4,7 +4,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Cliente } from '../cliente/cliente.model';
-import { Venda } from './venda.model';
+import { Produto } from '../produto/produto.model';
+import { RelatorioAnalitico } from '../relatorios/relatorio-analitico/relatorioAnalitico.model';
+import { Pedido } from './pedido';
 
 @Injectable({
   providedIn: 'root'
@@ -17,18 +19,28 @@ export class VendaService {
 
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
  
+  insert(obj : Pedido) {
+    return this.http.post(`${this.baseUrl}/pedidos`, obj, {
+        observe : 'response',
+        responseType : 'text'
+    });
+}
 
-  findById(id: String): Observable<Cliente> {
-    const url = `${this.baseUrl}/clientes/${id}`
-    return this.http.get<Cliente>(url)
+
+  
+  findAllClientes(): Observable<Cliente[]> {
+    const url = `${this.baseUrl}/clientes`
+    return this.http.get<Cliente[]>(url)
   }
 
-
-    create(venda: Venda): Observable<Venda> {
-    const url = `${this.baseUrl}/pedidos`
-    console.info(venda)
-    return this.http.post<Venda>(url, venda);
+  findAllProdutos(): Observable<Produto[]> {
+    const url = `${this.baseUrl}/produtos`
+    return this.http.get<Produto[]>(url)
   }
+
+  
+
+   
 
 
 
