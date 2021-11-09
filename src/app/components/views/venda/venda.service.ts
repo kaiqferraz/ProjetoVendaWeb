@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Cliente } from '../cliente/cliente.model';
 import { Produto } from '../produto/produto.model';
-import { RelatorioAnalitico } from '../relatorios/relatorio-analitico/relatorioAnalitico.model';
-import { Pedido } from './pedido';
+import { Pedido } from './venda-modals/pedido';
+
 
 @Injectable({
   providedIn: 'root'

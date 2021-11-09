@@ -46,6 +46,8 @@ import { StorageService } from 'src/environments/storage.service';
 import { ClienteService } from './components/views/cliente/cliente.service';
 import { ProdutoService } from './components/views/produto/produto.service';
 import { CartService } from './components/views/venda/cart.service';
+import { ProdutoDetailsComponent } from './components/views/venda/produto-details/produto-details.component';
+import { CartPageComponent } from './components/views/venda/cart-page/cart-page.component';
 
 
 
@@ -70,6 +72,8 @@ import { CartService } from './components/views/venda/cart.service';
     VendaCreateComponent,
     RelatorioAnaliticoComponent,
     RelatorioSinteticoComponent,
+    ProdutoDetailsComponent,
+    CartPageComponent,
  
  
   ],

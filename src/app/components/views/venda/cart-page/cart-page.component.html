@@ -1,0 +1,29 @@
+<div>
+
+
+  <div>
+    <H1>Selecione um cliente</H1>
+    <label for="selectCliente">Cliente:</label>
+    <select>
+      <option *ngFor="let c of clientes" value="{{c.id}}">{{c.nome}}</option>
+    </select>
+  </div>
+
+
+  <ul *ngFor="let item of itens">
+    <button name="trash" color="danger" (click)="removerItem(item.produto)">REMOVER</button>
+    <li>{{item.produto.nomeProduto}}</li>
+    <p>{{item.produto.precoProduto | currency}}</p>
+
+    <button name="remove-circle" color="primary" (click)="decrementarQtd(item.produto)"> -</button>
+    <p>{{item.quantidade}}</p>
+    <button name="remove-circle" color="primary" (click)="incrementarQtd(item.produto)">+</button>
+  </ul>
+
+  <button (click)="continuarComprando()">Continuar Comprando</button>
+
+  <button (click)="checkout()">Finalizar Pedido</button>
+
+
+
+</div>

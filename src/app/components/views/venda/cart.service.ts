@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { StorageService } from 'src/environments/storage.service';
 import { Produto } from '../produto/produto.model';
-import { Cart } from './cart';
+import { Cart } from './venda-modals/cart';
 
 @Injectable({
   providedIn: 'root'

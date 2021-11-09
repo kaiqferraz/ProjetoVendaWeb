@@ -12,6 +12,8 @@ import { ProdutoDeleteComponent } from './components/views/produto/produto-delet
 import { VendaCreateComponent } from './components/views/venda/venda-create/venda-create.component';
 import { RelatorioAnaliticoComponent } from './components/views/relatorios/relatorio-analitico/relatorio-analitico.component';
 import { RelatorioSinteticoComponent } from './components/views/relatorios/relatorio-sintetico/relatorio-sintetico.component';
+import { ProdutoDetailsComponent } from './components/views/venda/produto-details/produto-details.component';
+import { CartPageComponent } from './components/views/venda/cart-page/cart-page.component';
 
 const routes: Routes = [
 
@@ -89,10 +91,17 @@ const routes: Routes = [
     component: RelatorioAnaliticoComponent
 
   },
-  
-  
 
-  
+  { 
+    path: 'vendas/produtoDetails/:id',
+    component: ProdutoDetailsComponent
+  },
+
+  { 
+    path: 'cartPage',
+    component: CartPageComponent
+  },
+
 
 
 ];

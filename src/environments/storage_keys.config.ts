@@ -1,3 +1,4 @@
 export const STORAGE_KEY =  {
-  cart: "adegaOldDrinksCart"
+  cart: "adegaOldDrinksCart",
+  client:"adegaOldDrinksClient"
 }
