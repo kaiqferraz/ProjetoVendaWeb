@@ -1,10 +1,10 @@
 export interface Cliente {
-id?: String;
-nome: String;
-sexo: String;
-email: String;
-estadoCivil: String;
-cpf: String;
-dataNascimento: String;
-endereco: String;
+id?: string;
+nome: string;
+sexo: string;
+email: string;
+estadoCivil: string;
+cpf: string;
+dataNascimento: string;
+endereco: string;
 }

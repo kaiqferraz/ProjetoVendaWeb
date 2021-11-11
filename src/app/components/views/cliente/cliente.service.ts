@@ -17,16 +17,6 @@ export class ClienteService {
 
  constructor(private http: HttpClient, private _snack: MatSnackBar, public storare: StorageService) { }
 
-/*
- addClientLocalStorage(){
-  let client : LocalCLient;
-  this.storare.setLocalClient(client);
-}
-*/
-
-
-
-
 
 
  insert(obj : Pedido) {

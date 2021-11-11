@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Cliente } from "src/app/components/views/cliente/cliente.model";
 import { Cart } from "src/app/components/views/venda/venda-modals/cart";
 import { LocalCLient } from "src/app/components/views/venda/venda-modals/localClient";
 import { STORAGE_KEY } from "./storage_keys.config";
@@ -8,12 +9,11 @@ import { STORAGE_KEY } from "./storage_keys.config";
 export class StorageService{
 
     getLocalClient() : LocalCLient {
-        let client : LocalCLient = {nome:'',token:''};
-        let str;
-        if(str = localStorage.getItem(STORAGE_KEY.client)) {
-            return JSON.parse(str)
+        let client = localStorage.getItem(STORAGE_KEY.client);
+        if(client == null) {
+            return null!;
         }else {
-            return client;
+            return JSON.parse(client);
         }
     }
 
@@ -25,10 +25,11 @@ export class StorageService{
         }
     }
 
+  
+
+
 
    
-
-
    getCart() : Cart {
     let cart: Cart = {itens: []};
     let str;

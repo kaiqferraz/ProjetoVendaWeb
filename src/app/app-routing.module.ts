@@ -14,6 +14,8 @@ import { RelatorioAnaliticoComponent } from './components/views/relatorios/relat
 import { RelatorioSinteticoComponent } from './components/views/relatorios/relatorio-sintetico/relatorio-sintetico.component';
 import { ProdutoDetailsComponent } from './components/views/venda/produto-details/produto-details.component';
 import { CartPageComponent } from './components/views/venda/cart-page/cart-page.component';
+import { ClienteVendaComponent } from './components/views/venda/cliente-venda/cliente-venda.component';
+
 
 const routes: Routes = [
 
@@ -101,6 +103,12 @@ const routes: Routes = [
     path: 'cartPage',
     component: CartPageComponent
   },
+
+  { 
+    path: 'clienteVenda',
+    component: ClienteVendaComponent
+  },
+
 
 
 

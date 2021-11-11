@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { StorageService } from 'src/environments/storage.service';
 import { Cliente } from '../../cliente/cliente.model';
 import { ClienteService } from '../../cliente/cliente.service';
 import { Produto } from '../../produto/produto.model';
@@ -18,25 +19,40 @@ export class CartPageComponent implements OnInit {
 
   itens : CartItem[] = [] ;
   pedido! : Pedido;
-  clientes: Cliente[] = []
-  //codigoPedido! : string;
+ 
+  clientes : Cliente[] = [];
+
+  
+  displayedColumns: string[] = ['nomeProduto', 'precoProduto', 'quantidade','acoes'];
 
 
-  constructor( public cartService : CartService, public produtoService : ProdutoService, public pedidoService : VendaService, public router : Router, public clienteService : ClienteService) { }
+  constructor( 
+    public cartService : CartService, 
+    public produtoService : ProdutoService, 
+    public pedidoService : VendaService, 
+    public router : Router, 
+    public clienteService : ClienteService,
+    public storage : StorageService,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
+
     let cart = this.cartService.getCart();
     this.itens = cart.itens;
     this.itens = this.cartService.getCart().itens;
-    this.findAll();
+    this.findAllClientes();
+
   }
 
-  findAll() {
+ findAllClientes() {
+  
     this.clienteService.findAll().subscribe(resposta => {
       console.log(resposta)
       this.clientes = resposta;
     })
   }
+ 
 
   checkout() {
     this.pedidoService.insert(this.pedido).subscribe(resposta => {
@@ -48,6 +64,8 @@ export class CartPageComponent implements OnInit {
     }
     });
   }
+
+  
 
 
   incrementarQtd(produto: Produto) {

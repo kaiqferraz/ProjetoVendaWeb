@@ -48,6 +48,8 @@ import { ProdutoService } from './components/views/produto/produto.service';
 import { CartService } from './components/views/venda/cart.service';
 import { ProdutoDetailsComponent } from './components/views/venda/produto-details/produto-details.component';
 import { CartPageComponent } from './components/views/venda/cart-page/cart-page.component';
+import { ClienteVendaComponent } from './components/views/venda/cliente-venda/cliente-venda.component';
+
 
 
 
@@ -74,6 +76,7 @@ import { CartPageComponent } from './components/views/venda/cart-page/cart-page.
     RelatorioSinteticoComponent,
     ProdutoDetailsComponent,
     CartPageComponent,
+    ClienteVendaComponent,
  
  
   ],

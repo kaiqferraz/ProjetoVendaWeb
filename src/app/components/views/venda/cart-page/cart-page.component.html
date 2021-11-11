@@ -1,29 +1,63 @@
-<div>
+<div class="content">
 
-
-  <div>
-    <H1>Selecione um cliente</H1>
-    <label for="selectCliente">Cliente:</label>
-    <select>
-      <option *ngFor="let c of clientes" value="{{c.id}}">{{c.nome}}</option>
-    </select>
+  <div class="title">
+    <h1>Itens da compra </h1>
   </div>
 
 
-  <ul *ngFor="let item of itens">
-    <button name="trash" color="danger" (click)="removerItem(item.produto)">REMOVER</button>
-    <li>{{item.produto.nomeProduto}}</li>
-    <p>{{item.produto.precoProduto | currency}}</p>
+  <div class="mat-elevation-z8 content-table">
 
-    <button name="remove-circle" color="primary" (click)="decrementarQtd(item.produto)"> -</button>
-    <p>{{item.quantidade}}</p>
-    <button name="remove-circle" color="primary" (click)="incrementarQtd(item.produto)">+</button>
-  </ul>
 
-  <button (click)="continuarComprando()">Continuar Comprando</button>
+    <table class="table" mat-table [dataSource]="itens">
 
-  <button (click)="checkout()">Finalizar Pedido</button>
 
+      <ng-container matColumnDef="nomeProduto">
+        <th mat-header-cell *matHeaderCellDef> NOME </th>
+        <td mat-cell *matCellDef="let row">{{row.produto.nomeProduto}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="precoProduto">
+        <th mat-header-cell *matHeaderCellDef> PREÇO </th>
+        <td mat-cell *matCellDef="let row">{{row.produto.precoProduto}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quantidade">
+        <th mat-header-cell *matHeaderCellDef> QUANTIDADE </th>
+        <td mat-cell *matCellDef="let row">{{row.quantidade}} </td>
+      </ng-container>
+
+
+
+
+      <ng-container matColumnDef="acoes">
+        <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>
+        <td mat-cell *matCellDef="let row">
+
+          <div class="delete">
+            <button class="material-icons" (click)="removerItem(row.produto)">delete</button>
+          </div>
+
+          <div class="qtd">
+            <button class="material-icons" (click)="incrementarQtd(row.produto)">add_circle</button>
+            <button class="material-icons" (click)="decrementarQtd(row.produto)">remove</button>
+          </div>
+
+
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+
+  <div class="buttons">
+    <button (click)="continuarComprando()" class="mat-elevation-z8" mat-stroked-button color="primary">Continuar Comprando</button>
+
+    <button (click)="checkout()" class="mat-elevation-z8" mat-stroked-button color="black">Finalizar Pedido</button>
+  </div>
 
 
 </div>

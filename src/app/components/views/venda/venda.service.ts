@@ -3,8 +3,11 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { StorageService } from 'src/environments/storage.service';
 import { Cliente } from '../cliente/cliente.model';
 import { Produto } from '../produto/produto.model';
+import { CartService } from './cart.service';
+import { LocalCLient } from './venda-modals/localClient';
 import { Pedido } from './venda-modals/pedido';
 
 
@@ -15,10 +18,16 @@ import { Pedido } from './venda-modals/pedido';
 
 export class VendaService {
 
+
+
   baseUrl: String = environment.baseUrl; //url base do environment.ts 'http://localhost:8080/'
 
-  constructor(private http: HttpClient, private _snack: MatSnackBar) { }
+  constructor(private http: HttpClient, private _snack: MatSnackBar, public storage : StorageService, public cartService : CartService ) { }
  
+
+  
+
+
   insert(obj : Pedido) {
     return this.http.post(`${this.baseUrl}/pedidos`, obj, {
         observe : 'response',
@@ -26,8 +35,6 @@ export class VendaService {
     });
 }
 
-
-  
   findAllClientes(): Observable<Cliente[]> {
     const url = `${this.baseUrl}/clientes`
     return this.http.get<Cliente[]>(url)
@@ -37,13 +44,6 @@ export class VendaService {
     const url = `${this.baseUrl}/produtos`
     return this.http.get<Produto[]>(url)
   }
-
-  
-
-   
-
-
-
 
   mensagem(srt: String): void {
     this._snack.open(`${srt}`, 'OK', {

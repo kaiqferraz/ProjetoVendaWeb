@@ -1,0 +1,18 @@
+<h1>selecione um cliente</h1>
+<div class="row">
+  <div class="col-md-12">
+    <label>Cliente: </label>
+    <select>
+      <option value="">Selecione ...</option>
+      <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
+        {{ cliente.nome }}
+      </option>
+    </select>
+    <button>Adicionar cliente</button>
+
+  </div>
+</div>
+
+<div>
+  <button (click)="avancar()">Avançar para os produtos</button>
+</div>

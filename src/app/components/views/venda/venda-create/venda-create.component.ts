@@ -8,6 +8,7 @@ import { Produto } from '../../produto/produto.model';
 
 import { ProdutoService } from '../../produto/produto.service';
 import { CartService } from '../cart.service';
+import { Credenciais } from '../venda-modals/credenciais';
 
 
 import { VendaService } from '../venda.service';
@@ -24,6 +25,10 @@ export class VendaCreateComponent implements OnInit {
   itens : Produto[] = [];
 
   displayedColumns: string[] = ['nomeProduto', 'precoProduto','acoes'];
+
+  creds : Credenciais = {
+    cpf: ""
+  }
   
   constructor( 
     public cartService : CartService, 
@@ -46,6 +51,9 @@ export class VendaCreateComponent implements OnInit {
     }, error =>{});
   }
 
+  adicionaCliente(){
+    console.log(this.creds)
+  }
   
    
  

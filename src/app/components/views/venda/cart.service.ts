@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { StorageService } from 'src/environments/storage.service';
+import { Cliente } from '../cliente/cliente.model';
 import { Produto } from '../produto/produto.model';
 import { Cart } from './venda-modals/cart';
+
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +40,10 @@ export class CartService {
         this.storage.setCart(cart);
         return cart;
     }
+
+
+
+
 
     removeProduto(meuProduto: Produto): Cart {
       console.log(meuProduto)
@@ -75,6 +81,10 @@ export class CartService {
     this.storage.setCart(cart);
     return cart;
 }
+
+
+
+
 
 
 

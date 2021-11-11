@@ -17,6 +17,7 @@ h1 {
 .buttons {
   width: 100%;
   text-align: start;
+  margin-top: 2rem;
 }
 
 button {
