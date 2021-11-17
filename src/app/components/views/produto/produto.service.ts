@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Pedido } from '../venda/venda-modals/pedido';
+
 import { Produto } from './produto.model';
 
 @Injectable({
@@ -15,13 +15,7 @@ export class ProdutoService {
 
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
  
-  insert(obj : Pedido) {
-    return this.http.post(`${this.baseUrl}/pedidos`, obj, {
-        observe : 'response',
-        responseType : 'text'
-    });
-}
-
+ 
 
   findAll(): Observable<Produto[]> {
    const url = `${this.baseUrl}/produtos`

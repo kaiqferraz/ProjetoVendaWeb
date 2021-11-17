@@ -1,0 +1,104 @@
+<p-card>
+  <div class="tituloVenda">
+    <h1>Preencha os campos para realizar uma venda!</h1>
+  </div>
+</p-card>
+
+
+
+<form (ngSubmit)="adicionar()">
+
+
+  <div class="ui-g">
+
+
+    <p-card>
+      <div class="clienteForm">
+        <label>Cliente:</label>
+        <p-dropdown id="cliente" name="cliente" placeholder="Selecione um cliente.." [options]="clientes" optionLabel="nome" [(ngModel)]="venda.cliente"></p-dropdown>
+      </div>
+    </p-card>
+
+
+
+
+    <div class="ui-g-12">
+      <p-panel header="">
+        <div class="ui-g">
+
+          <p-card>
+            <div class="produtoForm">
+              <label>Produto:</label>
+              <p-dropdown id="produto" name="produto" placeholder="Selecione..." [options]="produtos" optionLabel="nomeProduto" [(ngModel)]="item.produto" #produto></p-dropdown>
+            </div>
+
+            <br />
+
+            <div class="quantidadeForm">
+              <label>QTD:</label>
+              <input pInputText type="number" id="quantidade" name="quantidade" [(ngModel)]="item.quantidade" #quantidade />
+            </div>
+
+            <div class="ui-g-1 ui-lg-4 ui-fluid">
+              <br />
+              <button pButton icon="pi pi-check" type="button" icon="pi pi-plus" (click)="incluirItem()" [disabled]="!produto.value || !quantidade.value" label="Adicionar Produto no carrinho!"></button>
+            </div>
+
+
+          </p-card>
+
+
+
+
+          <p-card>
+            <div class="ui-g-12">
+              <p-table [value]="venda.itens">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>Produto</th>
+                    <th>Valor unitário</th>
+                    <th>Quantidade</th>
+                    <th>Total</th>
+                  </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-item>
+                  <tr>
+                    <td>
+                      {{ item.produto.nomeProduto }}
+                    </td>
+                    <td>
+                      {{ item.produto.precoProduto | number:'1.2-2' }}
+                    </td>
+                    <td>
+                      {{ item.quantidade }}
+                    </td>
+                    <td>
+                      {{ item.valorTotal | number:'1.2-2' }}
+                    </td>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                  <tr>
+                    <td colspan="4">Nenhum item adicionado na venda.</td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+
+          </p-card>
+
+
+
+
+        </div>
+      </p-panel>
+    </div>
+
+    <div class="registrarVendaButton">
+      <button pButton icon="pi pi-check" label="Registrar venda" [disabled]="venda.itens.length === 0"></button>
+    </div>
+
+
+  </div>
+</form>

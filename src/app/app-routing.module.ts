@@ -9,12 +9,9 @@ import { ProdutoReadComponent } from './components/views/produto/produto-read/pr
 import { ProdutoCreateComponent } from './components/views/produto/produto-create/produto-create.component';
 import { ProdutoUpdateComponent } from './components/views/produto/produto-update/produto-update.component';
 import { ProdutoDeleteComponent } from './components/views/produto/produto-delete/produto-delete.component';
-import { VendaCreateComponent } from './components/views/venda/venda-create/venda-create.component';
 import { RelatorioAnaliticoComponent } from './components/views/relatorios/relatorio-analitico/relatorio-analitico.component';
 import { RelatorioSinteticoComponent } from './components/views/relatorios/relatorio-sintetico/relatorio-sintetico.component';
-import { ProdutoDetailsComponent } from './components/views/venda/produto-details/produto-details.component';
-import { CartPageComponent } from './components/views/venda/cart-page/cart-page.component';
-import { ClienteVendaComponent } from './components/views/venda/cliente-venda/cliente-venda.component';
+import { VendasCadastroComponent } from './components/views/vendas/vendas-cadastro/vendas-cadastro.component';
 
 
 const routes: Routes = [
@@ -70,12 +67,7 @@ const routes: Routes = [
 
   },
 
-  {
-    path: 'vendas',
-    component: VendaCreateComponent
-
-  },
-  
+ 
   {
     path: 'relatorioAnalitico',
     component: RelatorioAnaliticoComponent
@@ -95,18 +87,8 @@ const routes: Routes = [
   },
 
   { 
-    path: 'vendas/produtoDetails/:id',
-    component: ProdutoDetailsComponent
-  },
-
-  { 
-    path: 'cartPage',
-    component: CartPageComponent
-  },
-
-  { 
-    path: 'clienteVenda',
-    component: ClienteVendaComponent
+    path: 'vendaCadastro',
+    component: VendasCadastroComponent
   },
 
 

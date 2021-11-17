@@ -1,0 +1,26 @@
+.tituloVenda h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(192, 187, 187);
+  font-weight: 500;
+}
+
+.clienteForm label {
+  margin-right: 0.4rem;
+  font-weight: 600;
+}
+
+.produtoForm label {
+  margin-right: 0.4rem;
+  font-weight: 600;
+}
+
+.quantidadeForm label {
+  margin-right: 0.4rem;
+  font-weight: 600;
+}
+
+.registrarVendaButton {
+  text-align: center;
+  margin-top: 1rem;
+}

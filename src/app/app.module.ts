@@ -23,6 +23,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
@@ -35,22 +36,23 @@ import { ProdutoReadComponent } from './components/views/produto/produto-read/pr
 import { ProdutoCreateComponent } from './components/views/produto/produto-create/produto-create.component';
 import { ProdutoUpdateComponent } from './components/views/produto/produto-update/produto-update.component';
 import { ProdutoDeleteComponent } from './components/views/produto/produto-delete/produto-delete.component';
-import { VendaCreateComponent } from './components/views/venda/venda-create/venda-create.component';
 import { RelatorioAnaliticoComponent } from './components/views/relatorios/relatorio-analitico/relatorio-analitico.component';
 import { RelatorioSinteticoComponent } from './components/views/relatorios/relatorio-sintetico/relatorio-sintetico.component';
 
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { StorageService } from 'src/environments/storage.service';
-import { ClienteService } from './components/views/cliente/cliente.service';
-import { ProdutoService } from './components/views/produto/produto.service';
-import { CartService } from './components/views/venda/cart.service';
-import { ProdutoDetailsComponent } from './components/views/venda/produto-details/produto-details.component';
-import { CartPageComponent } from './components/views/venda/cart-page/cart-page.component';
-import { ClienteVendaComponent } from './components/views/venda/cliente-venda/cliente-venda.component';
+import { VendasCadastroComponent } from './components/views/vendas/vendas-cadastro/vendas-cadastro.component';
+
+import {TableModule} from 'primeng/table'
+import {DropdownModule} from 'primeng/dropdown'
+import {InputTextModule} from 'primeng/inputtext'
+import {PanelModule} from 'primeng/panel'
+import {ButtonModule} from 'primeng/button'
 
 
+import { MatSelectModule } from '@angular/material/select';
+import {CardModule} from 'primeng/card';
 
 
 
@@ -71,12 +73,9 @@ import { ClienteVendaComponent } from './components/views/venda/cliente-venda/cl
     ProdutoCreateComponent,
     ProdutoUpdateComponent,
     ProdutoDeleteComponent,
-    VendaCreateComponent,
     RelatorioAnaliticoComponent,
     RelatorioSinteticoComponent,
-    ProdutoDetailsComponent,
-    CartPageComponent,
-    ClienteVendaComponent,
+    VendasCadastroComponent,
  
  
   ],
@@ -84,6 +83,11 @@ import { ClienteVendaComponent } from './components/views/venda/cliente-venda/cl
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    TableModule,
+    DropdownModule,
+    InputTextModule,
+    ButtonModule,
+    PanelModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -94,18 +98,16 @@ import { ClienteVendaComponent } from './components/views/venda/cliente-venda/cl
     MatButtonModule,
     FormsModule,
     MatInputModule,
+    MatSelectModule,
     MatFormFieldModule,
     MatSnackBarModule,
     ReactiveFormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    CardModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    
  
   ],
   providers: [
-    StorageService,
-    ClienteService,
-    ProdutoService,
-    CartService,
-  
   ],
   bootstrap: [AppComponent]
 })

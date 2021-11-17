@@ -3,9 +3,6 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { StorageService } from 'src/environments/storage.service';
-import { LocalCLient } from '../venda/venda-modals/localClient';
-import { Pedido } from '../venda/venda-modals/pedido';
 import { Cliente } from './cliente.model';
 
 @Injectable({
@@ -15,16 +12,8 @@ export class ClienteService {
 
   baseUrl: String = environment.baseUrl; //url base do environment.ts 'http://localhost:8080/'
 
- constructor(private http: HttpClient, private _snack: MatSnackBar, public storare: StorageService) { }
+ constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
-
-
- insert(obj : Pedido) {
-  return this.http.post(`${this.baseUrl}/pedidos`, obj, {
-      observe : 'response',
-      responseType : 'text'
-  });
-}
 
  findAll(): Observable<Cliente[]> {
   const url = `${this.baseUrl}/clientes`
