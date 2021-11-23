@@ -1,6 +1,6 @@
 export interface RelatorioSintetico {
-  id?: String;
+  id?: string;
   cliente: Object;
-  dataVenda: String;
-  valorTotal: String;
+  dataVenda: string;
+  valorTotal: string;
   }

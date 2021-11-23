@@ -45,7 +45,10 @@ export class RelatorioAnaliticoComponent implements OnInit {
     }
 
     
-
+    cancel(): void {
+      this.router.navigate(['relatorioSintetico'])
+    }
+    
     
 
 

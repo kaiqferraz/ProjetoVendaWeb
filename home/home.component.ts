@@ -12,4 +12,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  url01="./assets/images/banner.jpg"
+ 
+
 }

@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -14,7 +13,7 @@ export class VendasCadastroComponent implements OnInit {
 
  
   venda: any = {itens: [], total: 0.0};
-  item: any = {};
+  item: any ={};
   clientes: Array<any> = [];
   produtos: Array<any> = [];
   @Output() vendaSalva = new EventEmitter();
@@ -37,6 +36,8 @@ export class VendasCadastroComponent implements OnInit {
     this.venda.itens.push(this.item);
 
     this.item = {};
+    console.log(this.venda.itens)
+    this.calcularTotal();
 
   }
 
@@ -48,7 +49,18 @@ export class VendasCadastroComponent implements OnInit {
     });
   }
 
+  cancel(): void {
+    this.router.navigate([''])
+  }
+
   
+  
+  calcularTotal(){
   
 
 }
+
+}
+
+  
+  

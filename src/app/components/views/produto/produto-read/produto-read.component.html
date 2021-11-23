@@ -4,7 +4,7 @@
     <h1>Nossos Produtos </h1>
   </div>
 
-  <button class="mat-elevation-z8" (click)="navegarParaProdutoCreate()" mat-stroked-button color="primary">Novo Produto</button>
+  <button class="mat-elevation-z8" (click)="navegarParaProdutoCreate()" mat-stroked-button color="primary">Cadastrar Novo Produto</button>
 
 
   <div class="mat-elevation-z8 content-table">
@@ -12,7 +12,7 @@
     <form class="pesquisar">
 
       <mat-form-field>
-        <input matInput (ngModelChange)="pesquisarProdutos(key.value)" #key="ngModel" ngModel name="key" placeholder="Pesquisar por Produto.." autocomplete="off">
+        <input matInput (ngModelChange)="pesquisarProdutos(key.value)" #key="ngModel" ngModel name="key" placeholder="Pesquisar por Nome.." autocomplete="off">
       </mat-form-field>
 
     </form>

@@ -89,7 +89,10 @@
           </p-card>
 
 
-
+          <div>
+            <h2>TOTAL</h2>
+            <input pInputText readonly />
+          </div>
 
         </div>
       </p-panel>
@@ -97,7 +100,10 @@
 
     <div class="registrarVendaButton">
       <button pButton icon="pi pi-check" label="Registrar venda" [disabled]="venda.itens.length === 0"></button>
+      <button pButton label="Cancelar venda" (click)="cancel()"></button>
     </div>
+
+
 
 
   </div>

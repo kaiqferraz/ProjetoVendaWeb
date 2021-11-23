@@ -7,7 +7,7 @@ i {
 }
 
 mat-sidenav {
-  background-color: burlywood;
+  background-color: dimgrey;
   border: 5px;
   border-color: black;
   border-style: double;
@@ -19,6 +19,10 @@ mat-nav-list a {
 }
 
 mat-nav-list a:hover {
-  color: crimson;
+  color: darkgoldenrod;
   font-weight: 500;
+}
+
+mat-nav-list a i {
+  color: darkgoldenrod;
 }

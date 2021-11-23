@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
@@ -12,7 +12,7 @@ import { RelatorioSintetico } from './relatorioSitentico.model';
 })
 export class RelatorioSinteticoService {
 
-  baseUrl: String = environment.baseUrl; //url base do environment.ts 'http://localhost:8080/'
+  baseUrl: String = environment.baseUrl;
 
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 

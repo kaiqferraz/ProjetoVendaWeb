@@ -2,8 +2,12 @@
   position: fixed;
   bottom: 0%;
   justify-content: center;
-  background-color: black;
-  height: 10%;
+  height: 8%;
+  background-color: dimgrey;
+  margin-top: 2rem;
+  border: 5px;
+  border-color: black;
+  border-style: double;
 }
 
 h1 {
@@ -12,5 +16,5 @@ h1 {
   text-align: center;
   font-size: 18px;
   font-weight: 400;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Arial Narrow', Arial, sans-serif;
 }

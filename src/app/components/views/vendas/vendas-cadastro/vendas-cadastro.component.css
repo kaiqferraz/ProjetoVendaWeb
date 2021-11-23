@@ -23,4 +23,9 @@
 .registrarVendaButton {
   text-align: center;
   margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.registrarVendaButton button {
+  margin-left: 2rem;
 }

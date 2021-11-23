@@ -39,3 +39,14 @@ button {
 .pesquisar {
   text-align: center;
 }
+
+.buttons {
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  margin-right: 0.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}

@@ -53,6 +53,8 @@ import {ButtonModule} from 'primeng/button'
 
 import { MatSelectModule } from '@angular/material/select';
 import {CardModule} from 'primeng/card';
+import {CarouselModule} from 'primeng/carousel';
+import {GalleriaModule} from 'primeng/galleria';
 
 
 
@@ -84,6 +86,8 @@ import {CardModule} from 'primeng/card';
     AppRoutingModule,
     BrowserAnimationsModule,
     TableModule,
+    GalleriaModule,
+    CarouselModule,
     DropdownModule,
     InputTextModule,
     ButtonModule,

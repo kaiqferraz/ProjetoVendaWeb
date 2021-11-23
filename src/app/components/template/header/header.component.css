@@ -3,5 +3,17 @@
 }
 
 .mat-toolbar {
-  background-color: bisque;
+  background-color: dimgrey;
+  border: 5px;
+  border-color: black;
+  border-style: double;
+  color: whitesmoke;
+}
+
+span img {
+  width: 2.5rem;
+}
+
+span {
+  font-size: 25px;
 }

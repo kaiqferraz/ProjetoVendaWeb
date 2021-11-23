@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RelatorioSinteticoService } from './relatorio-sintetico.service';
 import { RelatorioSintetico } from './relatorioSitentico.model';
 
@@ -14,10 +14,13 @@ export class RelatorioSinteticoComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'cliente', 'dataVenda', 'valorTotal', 'acoes'];
 
-  constructor(private service: RelatorioSinteticoService, private router: Router) { }
+  constructor(private service: RelatorioSinteticoService, private router: Router) {
+
+ 
+   }
  
    ngOnInit(): void {
-     this.findAll();
+    this.findAll();
    }
  
    findAll() {
@@ -27,6 +30,9 @@ export class RelatorioSinteticoComponent implements OnInit {
      })
    }
 
+ 
+
+  
    
  
   
