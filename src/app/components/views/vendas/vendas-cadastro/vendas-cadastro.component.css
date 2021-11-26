@@ -8,6 +8,7 @@
 .clienteForm label {
   margin-right: 0.4rem;
   font-weight: 600;
+  text-align: center;
 }
 
 .produtoForm label {
@@ -28,4 +29,18 @@
 
 .registrarVendaButton button {
   margin-left: 2rem;
+}
+
+.produtoForm i {
+  margin-left: 0.5rem;
+  color: burlywood;
+}
+
+.clienteForm i {
+  margin-left: 0.5rem;
+  color: burlywood;
+}
+
+.clienteForm {
+  text-align: center;
 }

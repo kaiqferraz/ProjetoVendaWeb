@@ -27,7 +27,6 @@ export class VendasCadastroComponent implements OnInit {
     this.vendaService.listarProdutos()
       .subscribe(response => this.produtos = response);
 
-   
   }
 
   incluirItem() {
@@ -37,8 +36,7 @@ export class VendasCadastroComponent implements OnInit {
 
     this.item = {};
     console.log(this.venda.itens)
-    this.calcularTotal();
-
+  
   }
 
   adicionar() {
@@ -54,9 +52,8 @@ export class VendasCadastroComponent implements OnInit {
   }
 
   
-  
-  calcularTotal(){
-  
+calcularTotal(){
+
 
 }
 

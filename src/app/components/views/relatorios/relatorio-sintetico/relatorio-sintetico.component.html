@@ -9,9 +9,17 @@
   <div class="mat-elevation-z8 content-table">
 
 
+    <form class="pesquisar">
 
-    <table class="table" mat-table [dataSource]="relatorioSintetico">
+      <mat-form-field>
+        <input matInput [(ngModel)]="dataVenda" name="dataVenda" placeholder="Pesquisar por data.." autocomplete="off">
+      </mat-form-field>
 
+    </form>
+
+
+
+    <table class="table" mat-table [dataSource]="relatorioSintetico | filter : dataVenda">
 
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -20,24 +28,24 @@
 
 
       <ng-container matColumnDef="cliente">
-        <th mat-header-cell *matHeaderCellDef> cliente </th>
+        <th mat-header-cell *matHeaderCellDef> CLIENTE </th>
         <td mat-cell *matCellDef="let row">{{row.cliente.nome}} </td>
       </ng-container>
 
       <ng-container matColumnDef="dataVenda">
-        <th mat-header-cell *matHeaderCellDef> dataVenda </th>
+        <th mat-header-cell *matHeaderCellDef> DATA-VENDA </th>
         <td mat-cell *matCellDef="let row">{{row.dataVenda}} </td>
       </ng-container>
 
       <ng-container matColumnDef="valorTotal">
-        <th mat-header-cell *matHeaderCellDef> valorTotal </th>
+        <th mat-header-cell *matHeaderCellDef> VALOR-TOTAL </th>
         <td mat-cell *matCellDef="let row">{{row.valorTotal | number:'1.2-2'}} </td>
       </ng-container>
 
 
 
       <ng-container matColumnDef="acoes">
-        <th class="mat-header" mat-header-cell *matHeaderCellDef> AÇÕES </th>
+        <th class="mat-header" mat-header-cell *matHeaderCellDef> ANALÍTICO </th>
         <td mat-cell *matCellDef="let row">
 
           <a class="edit" routerLink="relatorioAnalitico/{{ row.id }}">

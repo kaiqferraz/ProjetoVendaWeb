@@ -16,7 +16,9 @@
       <div class="clienteForm">
         <label>Cliente:</label>
         <p-dropdown id="cliente" name="cliente" placeholder="Selecione um cliente.." [options]="clientes" optionLabel="nome" [(ngModel)]="venda.cliente"></p-dropdown>
+        <i class="material-icons">group</i>
       </div>
+
     </p-card>
 
 
@@ -30,6 +32,7 @@
             <div class="produtoForm">
               <label>Produto:</label>
               <p-dropdown id="produto" name="produto" placeholder="Selecione..." [options]="produtos" optionLabel="nomeProduto" [(ngModel)]="item.produto" #produto></p-dropdown>
+              <i class="material-icons">local_bar</i>
             </div>
 
             <br />
@@ -87,12 +90,6 @@
             </div>
 
           </p-card>
-
-
-          <div>
-            <h2>TOTAL</h2>
-            <input pInputText readonly />
-          </div>
 
         </div>
       </p-panel>

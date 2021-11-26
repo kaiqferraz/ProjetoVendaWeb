@@ -11,6 +11,7 @@ import { RelatorioSintetico } from './relatorioSitentico.model';
 export class RelatorioSinteticoComponent implements OnInit {
 
   relatorioSintetico: RelatorioSintetico[] = []
+  dataVenda: any;
 
   displayedColumns: string[] = ['id', 'cliente', 'dataVenda', 'valorTotal', 'acoes'];
 
@@ -29,6 +30,8 @@ export class RelatorioSinteticoComponent implements OnInit {
        this.relatorioSintetico = resposta;
      })
    }
+
+ 
 
  
 

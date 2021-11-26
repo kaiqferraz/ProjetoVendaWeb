@@ -57,6 +57,9 @@ import {CarouselModule} from 'primeng/carousel';
 import {GalleriaModule} from 'primeng/galleria';
 
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 
 
 
@@ -82,6 +85,7 @@ import {GalleriaModule} from 'primeng/galleria';
  
   ],
   imports: [
+    Ng2SearchPipeModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
