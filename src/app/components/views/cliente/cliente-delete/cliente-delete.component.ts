@@ -48,9 +48,16 @@ constructor(private service: ClienteService,
       this.service.mensagem('Cliente deletado com sucesso!')
 
     }, err => {
-      this.service.mensagem(err.error.error)
+      if(err.status == 500) {
+        this.service.mensagem("cliente com venda registrada!!")
+    }
+      
     })
   }
+
+
+
+
 
   cancel(): void {
     this.router.navigate(['clientes'])

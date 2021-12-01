@@ -9,10 +9,9 @@ import { environment } from 'src/environments/environment';
 })
 export class VendasService {
 
-  baseUrl: String = environment.baseUrl;
+  baseUrl: String = environment.baseUrl; //url base do environment.ts 'http://localhost:8080/'
 
   constructor(private http: HttpClient,private _snack: MatSnackBar) { }
-
 
   listar(): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/pedidos`);

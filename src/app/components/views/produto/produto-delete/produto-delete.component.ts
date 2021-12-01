@@ -42,7 +42,9 @@ export class ProdutoDeleteComponent implements OnInit {
         this.service.mensagem('produto deletado com sucesso!')
   
       }, err => {
-        this.service.mensagem(err.error.error)
+        if(err.status == 500) {
+          this.service.mensagem("produto com venda registrada!!")
+      }
       })
     }
   
